@@ -1,10 +1,13 @@
 package myprojetowebii.cadastro.dto;
 
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
 
-public class AdicionarJogoRequestDTO {
+public class AtualizarJogoRequestDTO {
 
     @NotBlank(message = "Precisa adicionar o nome do jogo")
     @Size(min = 3, message = "O nome do jogo precisa ter no mínimo 3 caracteres")
@@ -15,16 +18,15 @@ public class AdicionarJogoRequestDTO {
     private String genero;
 
     @NotNull(message = "A data de lançamento não pode ficar vazia")
-    @Pattern(regexp = "^\\d{2}-\\d{2}-\\d{4}$", message = "A data de lançamento precisa ser no formato 'dd-MM-yyyy'. Exemplo: '10-04-1995'.")
     private LocalDate dataLancamento;
 
     @NotNull(message = "O valor do jogo não pode ser vazio")
     @DecimalMin(value = "0.0", inclusive = false, message = "O preço do jogo deve ser maior que zero")
     private Double preco;
 
-    public AdicionarJogoRequestDTO() {}
+    public AtualizarJogoRequestDTO() {}
 
-    public AdicionarJogoRequestDTO(String nome, String genero, LocalDate dataLancamento, Double preco) {
+    public AtualizarJogoRequestDTO(String nome, String genero, LocalDate dataLancamento, Double preco) {
         this.nome = nome;
         this.genero = genero;
         this.dataLancamento = dataLancamento;
@@ -41,8 +43,7 @@ public class AdicionarJogoRequestDTO {
 
     public LocalDate getDataLancamento() { return dataLancamento; }
 
-    public void setDataLancamento(LocalDate dataLancamento)
-    { this.dataLancamento = dataLancamento; }
+    public void setDataLancamento(LocalDate dataLancamento) { this.dataLancamento = dataLancamento; }
 
     public Double getPreco() { return preco; }
 
