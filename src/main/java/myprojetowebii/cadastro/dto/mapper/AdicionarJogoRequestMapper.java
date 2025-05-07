@@ -7,11 +7,10 @@ public class AdicionarJogoRequestMapper {
 
     public static Jogo toEntity(AdicionarJogoRequestDTO dto) {
         Jogo jogo = new Jogo();
-        jogo.getNome(dto.getNome());
-        jogo.getGenero(dto.getGenero());
-        jogo.getDataLancamento(dto.getDataLancamento());
-        jogo.getPreco(dto.getPreco());
+        jogo.setNome(dto.getNome());
+        jogo.setGenero(dto.getGenero());
+        jogo.setDataLancamento(dto.getDataLancamento());
+        jogo.setPreco(dto.getPreco());
         return jogo;
-
     }
 }

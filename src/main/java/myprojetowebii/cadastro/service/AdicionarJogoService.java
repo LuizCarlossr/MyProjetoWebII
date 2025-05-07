@@ -9,8 +9,8 @@ public class AdicionarJogoService {
 
     private final JogosRepository repository;
 
-    public AdicionarJogoService(JogosRepository repository) { this.repository = repository; }
+    public AdicionarJogoService(JogosRepository repository) {
+        this.repository = repository; }
 
     public Jogo adicionarJogo(Jogo jogo) { return repository.save(jogo); }
-
 }

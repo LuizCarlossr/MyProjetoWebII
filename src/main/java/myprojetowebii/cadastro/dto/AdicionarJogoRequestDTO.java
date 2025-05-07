@@ -1,5 +1,6 @@
 package myprojetowebii.cadastro.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
@@ -15,7 +16,7 @@ public class AdicionarJogoRequestDTO {
     private String genero;
 
     @NotNull(message = "A data de lançamento não pode ficar vazia")
-    @Pattern(regexp = "^\\d{2}-\\d{2}-\\d{4}$", message = "A data de lançamento precisa ser no formato 'dd-MM-yyyy'. Exemplo: '10-04-1995'.")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate dataLancamento;
 
     @NotNull(message = "O valor do jogo não pode ser vazio")

@@ -1,5 +1,6 @@
 package myprojetowebii.cadastro.service;
 
+import myprojetowebii.cadastro.exception.JogoNaoEncontradoException;
 import myprojetowebii.cadastro.model.Jogo;
 import myprojetowebii.cadastro.dto.AtualizarJogoRequestDTO;
 import myprojetowebii.cadastro.repository.JogosRepository;
@@ -29,6 +30,7 @@ public class AtualizarJogoService {
                 jogo.setPreco(dto.getPreco());
             }
             return repository.save(jogo);
-        }).orElseThrow(() -> new RuntimeException("O jogo com ID " + id + " não foi encontrado."));
+        }).orElseThrow(() -> new JogoNaoEncontradoException
+                ("Jogo com ID " + id + " não foi encontrado."));
     }
 }

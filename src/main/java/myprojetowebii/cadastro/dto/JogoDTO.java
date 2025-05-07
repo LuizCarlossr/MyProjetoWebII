@@ -3,7 +3,7 @@ package myprojetowebii.cadastro.dto;
 import java.time.LocalDate;
 
 public class JogoDTO {
-    private int id;
+
     private String nome;
     private String genero;
     private LocalDate dataLancamento;
@@ -28,7 +28,8 @@ public class JogoDTO {
 
     public LocalDate getDataLancamento() { return dataLancamento; }
 
-    public void setDataLancamento(LocalDate dataNascimento) { this.dataLancamento = dataLancamento; }
+    public void setDataLancamento(LocalDate dataLancamento)
+    { this.dataLancamento = dataLancamento; }
 
     public Double getPreco() { return preco; }
 
