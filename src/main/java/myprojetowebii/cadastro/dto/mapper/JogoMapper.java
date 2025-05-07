@@ -8,7 +8,8 @@ public class JogoMapper {
     public static JogoDTO toJogoDTO(Jogo jogo) {
         JogoDTO jogoDTO = new JogoDTO(
                 jogo.getNome(), jogo.getGenero(),
-                jogo.getDataLancamento(), jogo.getPreco()
+                jogo.getDataLancamento(), jogo.getPreco(),
+                jogo.getPlataforma()
         );
         return jogoDTO;
     }

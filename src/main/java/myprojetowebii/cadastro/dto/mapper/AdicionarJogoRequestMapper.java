@@ -11,6 +11,7 @@ public class AdicionarJogoRequestMapper {
         jogo.setGenero(dto.getGenero());
         jogo.setDataLancamento(dto.getDataLancamento());
         jogo.setPreco(dto.getPreco());
+        jogo.setPlataforma(dto.getPlataforma());
         return jogo;
     }
 }

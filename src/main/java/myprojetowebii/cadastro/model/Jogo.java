@@ -16,15 +16,17 @@ public class Jogo {
     private String genero;
     private LocalDate dataLancamento;
     private Double preco;
+    private String plataforma;
 
     public Jogo() {}
 
-    public Jogo(Long id, String nome, String genero, LocalDate dataLancamento, Double preco) {
+    public Jogo(Long id, String nome, String genero, LocalDate dataLancamento, Double preco, String plataforma) {
         this.id = id;
         this.nome = nome;
         this.genero = genero;
         this.dataLancamento = dataLancamento;
         this.preco = preco;
+        this.plataforma = plataforma;
     }
 
     public Long getId() { return id; }
@@ -47,4 +49,8 @@ public class Jogo {
     public Double getPreco() { return preco; }
 
     public void setPreco(Double preco) { this.preco = preco; }
+
+    public String getPlataforma() { return plataforma; }
+
+    public void setPlataforma(String plataforma) { this.plataforma = plataforma; }
 }

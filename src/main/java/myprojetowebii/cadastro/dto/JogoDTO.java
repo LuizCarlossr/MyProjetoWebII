@@ -8,14 +8,16 @@ public class JogoDTO {
     private String genero;
     private LocalDate dataLancamento;
     private Double preco;
+    private String plataforma;
 
     public JogoDTO() {}
 
-    public JogoDTO(String nome, String genero, LocalDate dataLancamento, Double preco) {
+    public JogoDTO(String nome, String genero, LocalDate dataLancamento, Double preco, String plataforma) {
         this.nome = nome;
         this.genero = genero;
         this.dataLancamento = dataLancamento;
         this.preco = preco;
+        this.plataforma = plataforma;
     }
 
     public String getNome() { return nome; }
@@ -34,4 +36,8 @@ public class JogoDTO {
     public Double getPreco() { return preco; }
 
     public void setPreco(Double preco) { this.preco = preco; }
+
+    public String getPlataforma() { return plataforma; }
+
+    public void setPlataforma(String plataforma) { this.plataforma = plataforma; }
 }

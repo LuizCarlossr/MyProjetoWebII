@@ -29,6 +29,9 @@ public class AtualizarJogoService {
             if (dto.getPreco() != null) {
                 jogo.setPreco(dto.getPreco());
             }
+            if (dto.getPlataforma() != null) {
+                jogo.setPlataforma(dto.getPlataforma());
+            }
             return repository.save(jogo);
         }).orElseThrow(() -> new JogoNaoEncontradoException
                 ("Jogo com ID " + id + " não foi encontrado."));

@@ -20,6 +20,6 @@ public class ExcluirJogoService {
                 (() -> new JogoNaoEncontradoException("Jogo com ID " + id + " não foi encontrado."));
         repository.delete(jogo);
 
-        return "O jogo '" + jogo.getId() + "' com ID " + id + " foi excluído com sucesso!";
+        return "O jogo '" + jogo.getNome() + "' com ID " + id + " foi excluído com sucesso!";
     }
 }

@@ -24,13 +24,18 @@ public class AtualizarJogoRequestDTO {
     @DecimalMin(value = "0.0", inclusive = false, message = "O preço do jogo deve ser maior que zero")
     private Double preco;
 
+    @NotBlank(message = "Precisa adicionar o nome da plataforma")
+    @Size(min = 3, message = "O nome da plataforma precisa ter no mínimo 3 caracteres")
+    private String plataforma;
+
     public AtualizarJogoRequestDTO() {}
 
-    public AtualizarJogoRequestDTO(String nome, String genero, LocalDate dataLancamento, Double preco) {
+    public AtualizarJogoRequestDTO(String nome, String genero, LocalDate dataLancamento, Double preco, String plataforma) {
         this.nome = nome;
         this.genero = genero;
         this.dataLancamento = dataLancamento;
         this.preco = preco;
+        this.plataforma = plataforma;
     }
 
     public String getNome() { return nome; }
@@ -48,6 +53,10 @@ public class AtualizarJogoRequestDTO {
     public Double getPreco() { return preco; }
 
     public void setPreco(Double preco) { this.preco = preco; }
+
+    public String getPlataforma() { return plataforma; }
+
+    public void setPlataforma(String plataforma) { this.plataforma = plataforma; }
 }
 
 
