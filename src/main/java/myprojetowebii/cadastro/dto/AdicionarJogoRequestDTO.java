@@ -15,8 +15,7 @@ public class AdicionarJogoRequestDTO {
     @Size(min = 3, message = "O gênero precisa ter no mínimo 3 caracteres")
     private String genero;
 
-    @NotNull(message = "A data de lançamento não pode ficar vazia")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    @NotNull(message = "A data de lançamento não pode ficar vazia, ex: ano-mês-dia com 4 dígitos")
     private LocalDate dataLancamento;
 
     @NotNull(message = "O valor do jogo não pode ser vazio")

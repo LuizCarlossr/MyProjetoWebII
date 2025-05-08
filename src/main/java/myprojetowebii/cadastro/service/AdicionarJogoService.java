@@ -12,5 +12,8 @@ public class AdicionarJogoService {
     public AdicionarJogoService(JogosRepository repository) {
         this.repository = repository; }
 
-    public Jogo adicionarJogo(Jogo jogo) { return repository.save(jogo); }
+    public Jogo adicionarJogo(Jogo jogo) { Jogo salvo = repository.save(jogo);
+        System.out.println("O jogo '" + salvo.getNome() + "' foi adicionado em sua biblioteca.");
+        return salvo;
+    }
 }
