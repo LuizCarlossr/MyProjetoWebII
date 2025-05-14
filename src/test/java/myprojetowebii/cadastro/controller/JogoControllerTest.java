@@ -37,7 +37,8 @@ public class JogoControllerTest {
         atualizarJogoService = Mockito.mock(AtualizarJogoService.class);
         excluirJogoService = Mockito.mock(ExcluirJogoService.class);
 
-        jogoController = new JogoController(adicionarJogoService, procurarJogosService,atualizarJogoService,excluirJogoService);
+        jogoController = new JogoController(adicionarJogoService,
+                procurarJogosService,atualizarJogoService,excluirJogoService);
     }
     @Test
     public void deveAdicionarJogo() {
