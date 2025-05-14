@@ -16,6 +16,7 @@ import org.mockito.Mockito;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
@@ -45,11 +46,17 @@ public class JogoControllerTest {
         AdicionarJogoRequestDTO dto = new AdicionarJogoRequestDTO();
         dto.setNome("Super Mario Odyssey");
         dto.setGenero("Aventura");
+        dto.setDataLancamento(LocalDate.of(2017, 10, 27));
+        dto.setPreco(249.99);
+        dto.setPlataforma("Nintendo Switch");
 
         Jogo jogo = new Jogo();
         jogo.setId(1L);
         jogo.setNome("Super Mario Odyssey");
         jogo.setGenero("Aventura");
+        jogo.setDataLancamento(LocalDate.of(2017, 10, 27));
+        jogo.setPreco(249.99);
+        jogo.setPlataforma("Nintendo Switch");
 
         when(adicionarJogoService.adicionarJogo(any())).thenReturn(jogo);
 
@@ -83,6 +90,9 @@ public class JogoControllerTest {
         jogo.setId(1L);
         jogo.setNome("Bloodborne");
         jogo.setGenero("RPG de Ação");
+        jogo.setDataLancamento(LocalDate.of(2015, 3, 24));
+        jogo.setPreco(129.99);
+        jogo.setPlataforma("PS4");
 
         when(procurarJogosService.procurarJogoPorId(1L)).thenReturn(jogo);
 
